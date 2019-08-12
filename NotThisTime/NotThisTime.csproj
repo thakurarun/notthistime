@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
@@ -28,20 +28,20 @@
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
     <Content Remove="$(SpaRoot)**" />
-    <Content Remove="ClientApp\lottery\node_modules\**" />
-    <Content Remove="ClientApp\lottery\src\app\WeatherModule\**" />
+    <Content Remove="ClientApp\node_modules\**" />
+    <Content Remove="ClientApp\src\app\WeatherModule\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="ClientApp\lottery\node_modules\**" />
-    <Compile Remove="ClientApp\lottery\src\app\WeatherModule\**" />
-    <EmbeddedResource Remove="ClientApp\lottery\node_modules\**" />
-    <EmbeddedResource Remove="ClientApp\lottery\src\app\WeatherModule\**" />
-    <None Remove="ClientApp\lottery\node_modules\**" />
-    <None Remove="ClientApp\lottery\src\app\WeatherModule\**" />
-    <TypeScriptCompile Remove="ClientApp\lottery\node_modules\**" />
-    <TypeScriptCompile Remove="ClientApp\lottery\src\app\WeatherModule\**" />
+    <Compile Remove="ClientApp\node_modules\**" />
+    <Compile Remove="ClientApp\src\app\WeatherModule\**" />
+    <EmbeddedResource Remove="ClientApp\node_modules\**" />
+    <EmbeddedResource Remove="ClientApp\src\app\WeatherModule\**" />
+    <None Remove="ClientApp\node_modules\**" />
+    <None Remove="ClientApp\src\app\WeatherModule\**" />
+    <TypeScriptCompile Remove="ClientApp\node_modules\**" />
+    <TypeScriptCompile Remove="ClientApp\src\app\WeatherModule\**" />
   </ItemGroup>
 
   <ItemGroup>

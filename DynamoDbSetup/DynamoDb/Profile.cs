@@ -80,6 +80,10 @@ namespace DynamoDbSetup.DynamoDb
             {
                 return false;
             }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

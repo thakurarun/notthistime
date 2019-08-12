@@ -1,0 +1,33 @@
+<div class="register-container">
+  <form
+    fxLayout="column"
+    fxLayoutAlign="space-around"
+    [formGroup]="registerForm"
+    (ngSubmit)="onSubmit()"
+    novalidate
+  >
+    <mat-form-field>
+      <input matInput placeholder="Email" formControlName="email" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Full Name" formControlName="fullName" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Username" formControlName="username" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Password" formControlName="password" />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Confirm Password"
+        formControlName="confirmPassword"
+      />
+    </mat-form-field>
+    <div fxLayout="row" fxLayoutGap="25px">
+      <button type="submit" mat-raised-button>Register</button>
+      <button mat-raised-button (click)="resetForm()">Cancel</button>
+    </div>
+  </form>
+</div>

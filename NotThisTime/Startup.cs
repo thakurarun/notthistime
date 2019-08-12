@@ -1,7 +1,6 @@
 using Amazon.DynamoDBv2;
-using Amazon.Extensions.NETCore.Setup;
-using Amazon.Runtime;
 using Database.Repository.Features.ProfileManagement.Register;
+using DynamoDbSetup;
 using DynamoDbSetup.DynamoDb;
 using DynamoDbSetup.DynamoDb.Interfaces;
 using Microsoft.AspNetCore.Builder;
@@ -12,7 +11,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.IO;
-using static Amazon.Internal.RegionEndpointProviderV2;
 
 namespace NotThisTime
 {
@@ -59,6 +57,7 @@ namespace NotThisTime
                 services.AddAWSService<IAmazonDynamoDB>();
             }
 
+            services.AddSingleton<ISetupDb, SetupDb>();
             services.AddSingleton<IProfile, Profile>();
 
             services.AddScoped<IRegistrationProcess, RegistrationProcess>();
@@ -99,7 +98,7 @@ namespace NotThisTime
                 // To learn more about options for serving an Angular SPA from ASP.NET Core,
                 // see https://go.microsoft.com/fwlink/?linkid=864501
 
-                spa.Options.SourcePath = "ClientApp/lottery";
+                spa.Options.SourcePath = "ClientApp";
 
                 if (env.IsDevelopment())
                 {
